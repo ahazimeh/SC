@@ -1,0 +1,70 @@
+import React, {Component} from "react";
+import logo from './logo.svg';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import Home from './components/Home';
+import About from './components/About';
+import './App.css';
+var b = ""
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { apiResponse: "" };
+    this.state = { brands: "" };
+}
+
+callAPI() {
+    fetch("http://localhost:9000/testAPI")
+        .then(res => res.text())
+        .then(res => this.setState({ apiResponse: res }));
+}
+Brands() {
+  fetch("http://localhost:9000/testAPI/brands")
+        .then(res => res.text())
+        .then(res => this.setState({ brands: res }));
+      
+}
+componentWillMount() {
+    this.Brands();
+
+}
+render(){
+  // for(let i=0;i<this.state.brands.length;i++)
+  // alert(i);
+  var a="";
+  var icon = [];
+  if(this.state.brands!=""){
+  a = JSON.parse(this.state.brands);
+  for(let i = 0;i<a.length;i++);
+}
+  return (
+    <div className="App">
+      <header className="App-header">
+        {/* <img src={logo} className="App-logo" alt="logo" /> */}
+        
+        
+      </header>
+      <p className="App-intro">{this.state.apiResponse}</p>
+      <p className="App-intro">{this.state.brands}</p>
+      <img src={require('./logo.svg')} />
+
+
+
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+          <ul className="navbar-nav mr-auto">
+            <li><Link to={'/'} className="nav-link"> Home </Link></li>
+            <li><Link to={'/about'} className="nav-link">About</Link></li>
+          </ul>
+          </nav>
+          <hr />
+          <Switch>
+              <Route exact path='/' component={Home} />
+              <Route path='/about' component={About} />
+          </Switch>
+
+    </div>
+  );
+}
+}
+
+export default App;
+ 
