@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <style>
+            body {
+  padding: 0;
+  margin: 0;
+}
+
+#section-aaa{
+  position:relative;
+  height:1000px;
+  background:red;
+}
+
+#section-bbb {
+  position:relative;
+  height:1000px;
+  background:grey;
+}
+#content {
+  height:100%;
+}
+#scroller {
+  background-color: #fca9a9;
+  width: 250px;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  z-index: 1;
+}
+        </style>
+    </head>
+    <body>
+        <div id="section-aaa"></div>
+<div id="section-bbb">
+  <div id="content"></div>
+  <div id="scroller">
+    Hello<br>
+    World<br>
+  </div>
+</div>
+<div id="section-aaa"></div>
+<script>
+(function ($) {
+  $(document).ready(function() {
+    $(window).scroll(function(){
+
+      if ($(window).scrollTop() > $('#section-bbb').offset().top) {
+          if ($(window).scrollTop() < $('#section-bbb').offset().top + $('#section-bbb').height() - 100 - $('#scroller').height() ){
+              $('#scroller').css({"position":"fixed", "top":"50px", "bottom":"auto"});
+          } else {
+              $('#scroller').css({"position":"absolute", "top":"auto", "bottom":"50px"});
+          }
+      } else {
+          $('#scroller').css({"position":"absolute", "top":"50px", "bottom":""});
+      }
+
+    });
+  });
+})(jQuery);
+
+</script>
+    </body>
+</html>

@@ -1,0 +1,39 @@
+.itemDetails{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    color:white;
+    width: 300px;
+    height: 40px;
+    border: 1px solid black;
+
+}
+.itemDetails:hover{
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    cursor: pointer;
+}
+.images{
+    float: left;width: 400px;
+    float: left;width: 300px;
+}
+.images img{
+    height: 450px;
+}
+.details{
+    float: left;width: 300px;
+}
+.scroller{
+    float: left;width: 300px;
+}
+.itemDetails p{
+    padding: 0px;
+}
+.description{
+    font-weight: bold;
+}
+.clear1{
+    clear: both;
+}

@@ -1,0 +1,123 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <style>
+            .itemDetails{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: black;
+                color:white;
+                width: 300px;
+                height: 40px;
+                border: 1px solid black;
+
+            }
+            .itemDetails:hover{
+                background-color: white;
+                color: black;
+                border: 1px solid black;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <p>a</p>
+        <p>a</p>
+        <p>a</p>
+        <p>a</p>
+        <p>a</p>
+        <p>a</p>
+        <p>a</p>
+        <p>a</p>
+        <p>a</p>
+        <p>a</p>
+        <p>a</p>
+        <p>a</p>
+        <div id="images" style="float: left;width: 400px;">
+            <img height="450px;" src="./910D0vQR2HL._UY445_.jpg">
+            <img height="450px;" src="./910D0vQR2HL._UY445_.jpg">
+            <img height="450px;" src="./910D0vQR2HL._UY445_.jpg">
+        </div>
+        <div id="details" style="float: left;width: 300px;">
+            
+            <div id="scroller" style="float: left;width: 300px;">
+            <h2>Gold-Tone Rectangular Analog Watch</h2>
+            <p>price</p>
+            <div class="itemDetails">
+                <p style="padding: 0px;">Add to bag</p>
+            </div>
+            <p style="font-weight: bold;">Description</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium placeat sapiente labore optio maxime doloribus culpa molestiae consequuntur repudiandae nemo, qui ipsum perspiciatis magnam. Dignissimos natus facilis veritatis expedita reiciendis!</p>
+        </div>
+        
+        </div>
+        <div style="clear:both">
+            <p>asdas</p>
+            <p>asdas</p>
+            <p>asdas</p>
+            <p>asdas</p>
+            <p>asdas</p>
+            <p>asdas</p>
+            <p>asdas</p>
+            <p>asdas</p>
+            <p>asdas</p>
+            <p>asdas</p>
+            <p>asdas</p>
+            <p>asdas</p>
+            <p>asdas</p>
+            <p>asdas</p>
+            <p>asdas</p>
+            <p>asdas</p>
+            <p>asdas</p>
+            <p>asdas</p>
+            <p>asdas</p>
+            <p>asdas</p>
+            <p>asdas</p>
+            <p>asdas</p>
+            <p>asdas</p>
+            <p>asdas</p>
+            <p>asdas</p>
+            <p>asdas</p>
+            <p>asdas</p>
+            <p>asdas</p>
+            <p>asdas</p>
+            <p>asdas</p>
+        </div>
+        <script>
+            var total = 0,flag = 0;
+            (function ($) {
+  $(document).ready(function() {
+    $(window).scroll(function(){
+        var detailsHeight = document.getElementById("details").clientHeight;
+        if(flag==0){
+            total = detailsHeight;
+            flag = 1;
+        }
+        console.log(total);
+        var x;
+        x = document.getElementById("images").clientHeight;
+        x = x+ $('#details').offset().top;
+        x -=total;
+      if ($(window).scrollTop() > $('#details').offset().top) {
+          
+          if ($(window).scrollTop() <x){
+              $('#scroller').css({"position":"fixed", "top":"0px", "bottom":"auto"});
+              
+          } else {
+            $('#scroller').css({"position":"absolute", "top":x+"px", "bottom":"50px"});
+          }
+      } else {
+        $('#scroller').css({"position":"relative", "top":"auto", "bottom":"0px"});
+      }
+
+    });
+  });
+})(jQuery);
+        </script>
+    </body>
+</html>

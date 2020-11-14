@@ -3,6 +3,10 @@ import logo from './logo.svg';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import Home from './components/Home';
 import About from './components/About';
+import NavBar from './components/navbar/NavBar';
+import ProductDetails from './components/productDetails/ProductDetails';
+import MainImages from './components/MainImages';
+import Brands from './components/Brands';
 import './App.css';
 var b = ""
 class App extends Component {
@@ -39,13 +43,18 @@ render(){
   return (
     <div className="App">
       <header className="App-header">
+      <NavBar currentweather = "" />
+      <MainImages/>
+      <Brands/>
+
+      {/* <ProductDetails currentweather = "" /> */}
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
         
         
       </header>
       <p className="App-intro">{this.state.apiResponse}</p>
       <p className="App-intro">{this.state.brands}</p>
-      <img src={require('./logo.svg')} />
+      {/* <img src={require('./logo.svg')} />
 
 
 
@@ -59,7 +68,7 @@ render(){
           <Switch>
               <Route exact path='/' component={Home} />
               <Route path='/about' component={About} />
-          </Switch>
+          </Switch> */}
 
     </div>
   );
