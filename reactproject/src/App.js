@@ -7,6 +7,7 @@ import NavBar from './components/navbar/NavBar';
 import ProductDetails from './components/productDetails/ProductDetails';
 import MainImages from './components/MainImages';
 import Brands from './components/Brands';
+import Categories from './components/Categories';
 import './App.css';
 var b = ""
 class App extends Component {
@@ -44,16 +45,18 @@ render(){
     <div className="App">
       <header className="App-header">
       <NavBar currentweather = "" />
-      <MainImages/>
+      {/* <MainImages/>
       <Brands/>
+      <br/><br/><br/><br/><br/><br/>
+      <Categories/> */}
 
       {/* <ProductDetails currentweather = "" /> */}
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
         
         
       </header>
-      <p className="App-intro">{this.state.apiResponse}</p>
-      <p className="App-intro">{this.state.brands}</p>
+      {/* <p className="App-intro">{this.state.apiResponse}</p>
+      <p className="App-intro">{this.state.brands}</p> */}
       {/* <img src={require('./logo.svg')} />
 
 
@@ -64,11 +67,11 @@ render(){
             <li><Link to={'/about'} className="nav-link">About</Link></li>
           </ul>
           </nav>
-          <hr />
+          <hr /> */}
           <Switch>
-              <Route exact path='/' component={Home} />
+              <Route exact path='/home' component={Home} />
               <Route path='/about' component={About} />
-          </Switch> */}
+          </Switch>
 
     </div>
   );

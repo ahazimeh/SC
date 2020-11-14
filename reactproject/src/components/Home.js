@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
-
+import MainImages from './MainImages';
+import Brands from './Brands';
+import Categories from './Categories';
 class Home extends Component {
   render() {
     return (
         <div>
-          <h2>Home</h2>
+          <MainImages/>
+      <Brands/>
+      <br/><br/><br/><br/><br/><br/>
+      <Categories/>
         </div>
     );
   }
