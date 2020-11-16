@@ -3,12 +3,20 @@ import './ProductDetails.css';
 import $ from 'jquery';
 var total = 0;
   class ProductDetails extends React.Component {
-  state = {
-    input: ""
-  };
   
+  constructor(props){
+    super(props);
+    this.state = {
+      input: "",
+    };
+    this.handleResize = this.handleResize.bind(this);
+  }
+  handleResize(){
+    this.setState({
+      input:""
+    })
+  }
   handleScroll(){
-    //   alert("hi");
             // (function ($) {
   $(document).ready(function() {
     $(window).scroll(function(){
@@ -17,6 +25,7 @@ var total = 0;
         x = document.getElementById("images").clientHeight;
         x = x+ $('#details').offset().top;
         x -=total;
+        if(window.innerWidth>=600)
       if ($(window).scrollTop() > $('#details').offset().top) {
           
           if ($(window).scrollTop() <x){
@@ -41,17 +50,23 @@ var total = 0;
     var detailsHeight = document.getElementById("details").clientHeight;
     total = detailsHeight;
     window.addEventListener('scroll',this.handleScroll);
+    window.addEventListener('resize',this.handleResize);
   }
   render() {
+    // width of both elements is 600px
+    let margin = (window.innerWidth-600)/3;
+    if(margin<0){
+      margin = 0;
+    }
     return (
       <div>
-        <div id="images" className="images">
-        <img src={require('./910D0vQR2HL._UY445_.jpg')} />
-        <img src={require('./910D0vQR2HL._UY445_.jpg')} />
-        <img src={require('./910D0vQR2HL._UY445_.jpg')} />
+        <div style={{marginLeft:margin}} id="images" className="images">
+          <div><img src={require('./910D0vQR2HL._UY445_.jpg')} /></div>
+          <div><img src={require('./910D0vQR2HL._UY445_.jpg')} /></div>
+          <div><img src={require('./910D0vQR2HL._UY445_.jpg')} /></div>
         
         </div>
-        <div id="details" className="details">
+        <div style={{marginLeft:margin}} id="details" className="details">
             
             <div id="scroller" className="scroller" >
             <h2>Gold-Tone Rectangular Analog Watch</h2>
@@ -87,34 +102,6 @@ var total = 0;
         </div>
           </div>
     );
-    var total = 0,flag = 0;
-            // (function ($) {
-  $(document).ready(function() {
-    $(window).scroll(function(){
-        var detailsHeight = document.getElementById("details").clientHeight;
-        if(flag==0){
-            total = detailsHeight;
-            flag = 1;
-        }
-        var x;
-        x = document.getElementById("images").clientHeight;
-        x = x+ $('#details').offset().top;
-        x -=total;
-      if ($(window).scrollTop() > $('#details').offset().top) {
-          
-          if ($(window).scrollTop() <x){
-              $('#scroller').css({"position":"fixed", "top":"0px", "bottom":"auto"});
-              
-          } else {
-            $('#scroller').css({"position":"absolute", "top":x+"px", "bottom":"50px"});
-          }
-      } else {
-        $('#scroller').css({"position":"relative", "top":"auto", "bottom":"0px"});
-      }
-
-    });
-  });
-// })(jQuery);
 
   }
 }
