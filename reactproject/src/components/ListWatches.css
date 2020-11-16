@@ -8,6 +8,7 @@
     position: relative;
     /* width: 31%;height:65%;float: left;background-color: white; */
     width: 31%;margin-left: 2%;float: left;background-color: white;
+    cursor: pointer;
 }
 .clearWatchFloat{
     clear: both;

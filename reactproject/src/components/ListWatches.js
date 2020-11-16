@@ -36,19 +36,19 @@ class ListWatches extends React.Component {
         <div>
             <div className="allWatches">
         <div className="listWatches">
-        <div style={{ height:h}} className="singleWatch">
+        <div onClick={event =>  window.location.href='/productDetails'} style={{ height:h}} className="singleWatch">
             
             <img height={hi} width="50%" src={require('../img/listWatches/1.jpg')}/>
             <br/><br/>
             <div>image 1</div>
         </div>
-        <div style={{ height:h}} className="singleWatch">
+        <div onClick={event =>  window.location.href='/productDetails'} style={{ height:h}} className="singleWatch">
             
         <img height={hi} width="50%" src={require('../img/listWatches/2.jpg')}/>
             <br/><br/>
             <div>image 1</div>
         </div>
-        <div style={{ height:h}} className="singleWatch">
+        <div onClick={event =>  window.location.href='/productDetails'} style={{ height:h}} className="singleWatch">
             
             <img height={hi} width="50%" src={require('../img/listWatches/3.jpg')}/>
             <br/><br/>
@@ -57,19 +57,19 @@ class ListWatches extends React.Component {
     </div>
     <div className="clearWatchFloat"><br/><br/><br/><br/></div>
     <div className="listWatches">
-        <div style={{ height:h}} className="singleWatch">
+        <div onClick={event =>  window.location.href='/productDetails'} style={{ height:h}} className="singleWatch">
             
             <img height={hi} width="50%" src={require('../img/listWatches/4.jpg')}/>
             <br/><br/>
             <div>image 1</div>
         </div>
-        <div style={{ height:h}} className="singleWatch">
+        <div onClick={event =>  window.location.href='/productDetails'} style={{ height:h}} className="singleWatch">
             
             <img height={hi} width="50%" src={require('../img/listWatches/5.png')}/>
             <br/><br/>
             <div>image 1</div>
         </div>
-        <div style={{ height:h}} className="singleWatch">
+        <div onClick={event =>  window.location.href='/productDetails'} style={{ height:h}} className="singleWatch">
             
             <img height={hi} width="50%" src={require('../img/listWatches/6.jpeg')}/>
             <br/><br/>
