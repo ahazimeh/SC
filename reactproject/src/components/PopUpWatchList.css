@@ -1,0 +1,41 @@
+*{
+    /* font-family: 'Courier New', Courier, monospace; */
+}
+.PopUpList[display=block]{
+    display: block;
+}
+.PopUpList[display=none]{
+    display: none;
+}
+.PopUpList{
+    height: 100%;
+    width: 50%;
+    background-color: #F7F7F7;
+    position: fixed;
+    top:0;
+    right: 0;
+    z-index:99;
+  }
+
+
+
+
+
+
+
+  .closePopUp {
+    color: black;
+    float: right;
+    font-size: 40px;
+    /* font-weight: bold; */
+  }
+  
+  .closePopUp:hover,
+  .closePopUp:focus {
+    color: yellowgreen;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .font{
+      font-size: 20px;
+  }

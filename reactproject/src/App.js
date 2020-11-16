@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import logo from './logo.svg';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import Home from './components/Home';
+import ViewWatches from './components/ViewWatches';
 import About from './components/About';
 import NavBar from './components/navbar/NavBar';
 import ProductDetails from './components/productDetails/ProductDetails';
@@ -70,6 +71,7 @@ render(){
           <hr /> */}
           <Switch>
               <Route exact path='/home' component={Home} />
+              <Route exact path='/watches' component={ViewWatches} />
               <Route path='/about' component={About} />
           </Switch>
 

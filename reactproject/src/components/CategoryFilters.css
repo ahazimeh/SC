@@ -1,0 +1,55 @@
+.circle-icon {
+    border-radius: 50%;
+    width:74px;height:74px;
+}
+.circle-icon:hover {
+  cursor: pointer;
+}
+
+
+#wrap {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+}
+.icon:before {
+  content: '';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 74px;
+  height: 74px;
+  border-radius: 50%;
+  border: 2px solid black;
+  font-size: 30px;
+  color: black;
+}
+#plus:before {
+  content: '+';
+  color: #12784A;
+  border: 1px solid white;
+}
+#plus:hover:before {
+  /* content: '+'; */
+  color: white;
+  background-color: #12784A;
+  cursor: pointer;
+}
+
+
+.filterFlex{
+  display: flex; flex-direction: row;justify-content: center;
+}
+
+.filterItem{
+  padding: 30px;
+}
+.textAlign{
+  text-align: center;
+}
+
+
+
+
+
+
