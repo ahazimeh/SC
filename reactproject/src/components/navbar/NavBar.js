@@ -36,7 +36,7 @@ import './css/bootstrap.css';
           </ul>
         </li> */}
         <li><a href="/watches">Watches</a></li>
-        <li><a href="#">Page 3</a></li>
+        <li><a href="/productDetails">ProductDetails</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>

@@ -45,18 +45,6 @@ var total = 0;
   render() {
     return (
       <div>
-          <p>a</p>
-        <p>a</p>
-        <p>a</p>
-        <p>a</p>
-        <p>a</p>
-        <p>a</p>
-        <p>a</p>
-        <p>a</p>
-        <p>a</p>
-        <p>a</p>
-        <p>a</p>
-        <p>a</p>
         <div id="images" className="images">
         <img src={require('./910D0vQR2HL._UY445_.jpg')} />
         <img src={require('./910D0vQR2HL._UY445_.jpg')} />
@@ -77,17 +65,6 @@ var total = 0;
         
         </div>
         <div className="clear1">
-            <p>asdas</p>
-            <p>asdas</p>
-            <p>asdas</p>
-            <p>asdas</p>
-            <p>asdas</p>
-            <p>asdas</p>
-            <p>asdas</p>
-            <p>asdas</p>
-            <p>asdas</p>
-            <p>asdas</p>
-            <p>asdas</p>
             <p>asdas</p>
             <p>asdas</p>
             <p>asdas</p>
