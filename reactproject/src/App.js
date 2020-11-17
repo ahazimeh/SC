@@ -83,4 +83,9 @@ render(){
 }
 
 export default App;
+<<<<<<< HEAD
 //  test
+=======
+//here is a comment
+ 
+>>>>>>> ba0784ed852be880b86e8f32d199f6c4a567a162
