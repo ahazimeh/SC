@@ -7,10 +7,16 @@ class ListWatches extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            input: ""
+            input: "",
+            apiResponse:""
           };
           this.handleResize = this.handleResize.bind(this);
     }
+    ListWatch() {
+        fetch("http://localhost:9000/testAPI/ViewWatch?gender=0,1")
+            .then(res => res.text())
+            .then(res => this.setState({ apiResponse: JSON.parse(res) }));
+      }
     
     handleResize(){
             // alert("h")
@@ -26,58 +32,52 @@ class ListWatches extends React.Component {
         window.addEventListener('resize',this.handleResize);
             h =window.innerWidth*0.65*0.45;
             hi =window.innerWidth*0.455*0.45;
+            this.ListWatch();
+
+
 
     
     }
   
     render() {
+        if(this.state.apiResponse[0]!=undefined){
+        let watches = [];
+        let all = [];
+        let all1 = [];
+
+        for(let i = 0;i < this.state.apiResponse.length;i++){
+            watches.push(
+        
+                <div onClick={event =>  window.location.href='/productDetails?id='+this.state.apiResponse[i].id} style={{ height:h}} className="singleWatch">
+                <img height={hi} width="50%" src={require('../img/listWatches/'+this.state.apiResponse[i].image)}/>
+                <br/><br/>
+                <div>{this.state.apiResponse[i].name}</div>
+    
+                </div>);
+                if((i+1)%3 == 0){
+                    all.push(
+                        <div className="listWatches">
+                            {watches}
+                        </div>
+                    )
+                    all.push(
+                        <div className="clearWatchFloat"><br/><br/><br/><br/></div>
+                    )
+                    watches = [];
+                }
+        }
+        all1.push(
+            <div className="allWatches">
+                {all}
+            </div>
+            
+        )
     
       return (
         <div>
-            <div className="allWatches">
-        <div className="listWatches">
-        <div onClick={event =>  window.location.href='/productDetails'} style={{ height:h}} className="singleWatch">
+            {all1}
+
             
-            <img height={hi} width="50%" src={require('../img/listWatches/1.jpeg')}/>
-            <br/><br/>
-            <div>image 1</div>
-        </div>
-        <div onClick={event =>  window.location.href='/productDetails'} style={{ height:h}} className="singleWatch">
-            
-        <img height={hi} width="50%" src={require('../img/listWatches/2.jpeg')}/>
-            <br/><br/>
-            <div>image 1</div>
-        </div>
-        <div onClick={event =>  window.location.href='/productDetails'} style={{ height:h}} className="singleWatch">
-            
-            <img height={hi} width="50%" src={require('../img/listWatches/3.jpeg')}/>
-            <br/><br/>
-            <div>image 1</div>
-        </div>
-    </div>
-    <div className="clearWatchFloat"><br/><br/><br/><br/></div>
-    <div className="listWatches">
-        <div onClick={event =>  window.location.href='/productDetails'} style={{ height:h}} className="singleWatch">
-            
-            <img height={hi} width="50%" src={require('../img/listWatches/4.jpeg')}/>
-            <br/><br/>
-            <div>image 1</div>
-        </div>
-        <div onClick={event =>  window.location.href='/productDetails'} style={{ height:h}} className="singleWatch">
-            
-            <img height={hi} width="50%" src={require('../img/listWatches/5.jpeg')}/>
-            <br/><br/>
-            <div>image 1</div>
-        </div>
-        <div onClick={event =>  window.location.href='/productDetails'} style={{ height:h}} className="singleWatch">
-            
-            <img height={hi} width="50%" src={require('../img/listWatches/6.jpeg')}/>
-            <br/><br/>
-            <div>image 1</div>
-        </div>
-    </div>
-    <div className="clearWatchFloat"><br/><br/><br/><br/></div>
-</div>
 <div className="switchPage">
     <a href="#">
         <b>{"<"}</b>
@@ -87,5 +87,8 @@ class ListWatches extends React.Component {
             </div>
       );
     }
+    else
+    return <div></div>
   }
+}
   export default ListWatches;

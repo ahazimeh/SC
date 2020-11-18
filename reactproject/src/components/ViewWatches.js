@@ -9,7 +9,7 @@ class ViewWatches extends React.Component {
     super(props);
     this.state = {
       input: "",
-      display:"none"
+      display:"none",
     };
   }
   displayPopUp = (result) => {
@@ -19,7 +19,10 @@ close = (result) =>{
 
   this.setState({display: result});
 }
+componentWillMount(){
+}
     render() {
+      // alert(window.location);
     
     
       return (
