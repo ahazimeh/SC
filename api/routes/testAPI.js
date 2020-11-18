@@ -5,7 +5,7 @@ var con = mysql.createConnection({
     host: "localhost",
     user: "ali",
     password: "JxSLRkdutW",
-    database: "test"
+    database: "watch"
   });
   
   con.connect(function(err) {
@@ -28,8 +28,12 @@ router.get("/brands",function(req,res,next){
 
         
     });
-
-
-
 });
+router.get("listWatches",function(req,res,next){
+  con.query("select * from Items",(err,rows) => {
+    res.send(rows);
+  })
+})
+
+
 module.exports = router;
