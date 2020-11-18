@@ -46,29 +46,9 @@ render(){
     <div className="App">
       <header className="App-header">
       <NavBar currentweather = "" />
-      {/* <MainImages/>
-      <Brands/>
-      <br/><br/><br/><br/><br/><br/>
-      <Categories/> */}
-
-      {/* <ProductDetails currentweather = "" /> */}
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
         
         
       </header>
-      {/* <p className="App-intro">{this.state.apiResponse}</p>
-      <p className="App-intro">{this.state.brands}</p> */}
-      {/* <img src={require('./logo.svg')} />
-
-
-
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <ul className="navbar-nav mr-auto">
-            <li><Link to={'/'} className="nav-link"> Home </Link></li>
-            <li><Link to={'/about'} className="nav-link">About</Link></li>
-          </ul>
-          </nav>
-          <hr /> */}
           <Switch>
               <Route exact path='/home' component={Home} />
               <Route exact path='/watches' component={ViewWatches} />
