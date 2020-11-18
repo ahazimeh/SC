@@ -38,19 +38,19 @@ class ListWatches extends React.Component {
         <div className="listWatches">
         <div onClick={event =>  window.location.href='/productDetails'} style={{ height:h}} className="singleWatch">
             
-            <img height={hi} width="50%" src={require('../img/listWatches/1.jpg')}/>
+            <img height={hi} width="50%" src={require('../img/listWatches/1.jpeg')}/>
             <br/><br/>
             <div>image 1</div>
         </div>
         <div onClick={event =>  window.location.href='/productDetails'} style={{ height:h}} className="singleWatch">
             
-        <img height={hi} width="50%" src={require('../img/listWatches/2.jpg')}/>
+        <img height={hi} width="50%" src={require('../img/listWatches/2.jpeg')}/>
             <br/><br/>
             <div>image 1</div>
         </div>
         <div onClick={event =>  window.location.href='/productDetails'} style={{ height:h}} className="singleWatch">
             
-            <img height={hi} width="50%" src={require('../img/listWatches/3.jpg')}/>
+            <img height={hi} width="50%" src={require('../img/listWatches/3.jpeg')}/>
             <br/><br/>
             <div>image 1</div>
         </div>
@@ -59,13 +59,13 @@ class ListWatches extends React.Component {
     <div className="listWatches">
         <div onClick={event =>  window.location.href='/productDetails'} style={{ height:h}} className="singleWatch">
             
-            <img height={hi} width="50%" src={require('../img/listWatches/4.jpg')}/>
+            <img height={hi} width="50%" src={require('../img/listWatches/4.jpeg')}/>
             <br/><br/>
             <div>image 1</div>
         </div>
         <div onClick={event =>  window.location.href='/productDetails'} style={{ height:h}} className="singleWatch">
             
-            <img height={hi} width="50%" src={require('../img/listWatches/5.png')}/>
+            <img height={hi} width="50%" src={require('../img/listWatches/5.jpeg')}/>
             <br/><br/>
             <div>image 1</div>
         </div>

@@ -12,15 +12,15 @@ import './Categories.css';
       <div>
       <div className="CategoryDiv">
         <div className="CategoryImg">
-            <img height="100%" width="100%" src={require('../img/categories/hub-watches-skydweller_m326934-0003_17tl_316_portrait.jpg')}/>
+            <img height="100%" width="100%" src={require('../img/categories/men.jpg')}/>
             <div>sadasd</div>
         </div>
         <div className="CategoryImg">
-        <img height="100%" width="100%" src={require('../img/categories/womens-watches_pearlmaster_39.jpg')}/>
+        <img height="100%" width="100%" src={require('../img/categories/women.jpg')}/>
             <div>sadasd</div>
         </div>
         <div className="CategoryImg">
-        <img height="100%" width="100%" src={require('../img/categories/download.jpeg')}/>
+        <img height="100%" width="100%" src={require('../img/categories/steel.jpeg')}/>
             <div>sadasd</div>
         </div>
     </div>
@@ -28,15 +28,15 @@ import './Categories.css';
     <br/>
     <div className="CategoryDiv">
         <div className="CategoryImg">
-        <img height="100%" width="100%" src={require('../img/categories/hub-watches-steel-gold_mat-steel_0001_plo_fonte_appretage_10jdm_069.jpg')}/>
+        <img height="100%" width="100%" src={require('../img/categories/steelandgold.jpg')}/>
             <div>sadasd</div>
         </div>
         <div className="CategoryImg">
-        <img height="100%" width="100%" src={require('../img/categories/hub-watches-gold-watches_plo_fonte_appretage_10jdm_069.jpg')}/>
+        <img height="100%" width="100%" src={require('../img/categories/gold.jpg')}/>
             <div>sadasd</div>
         </div>
         <div className="CategoryImg">
-        <img height="100%" width="100%" src={require('../img/categories/download (1).jpeg')}/>
+        <img height="100%" width="100%" src={require('../img/categories/gem.jpeg')}/>
             <div>sadasd</div>
         </div>
     </div>
