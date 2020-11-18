@@ -37,7 +37,7 @@ router.get("/ViewWatch",function(req,res){
     for(let i = 0;i < gender.length;i++){
       result = result + "Items.gender = "+gender[i];
       if(gender.length-1 == i){
-        result = result +") group by id";
+        result = result +") and ItemImages.name is not null group by id";
       }
       else{
         result = result + " || ";
@@ -45,11 +45,11 @@ router.get("/ViewWatch",function(req,res){
     }
   }
   else{
-    result = result + "Items.gender = "+req.query.gender+") group by id";
+    result = result + "Items.gender = "+req.query.gender+") and ItemImages.name is not null group by id";
   }
   console.log(result);
   // result = result+"Items.gender =0 || Items.gender = 0)";
-  // select Items.id,Items.name from Items join ItemImages on ItemImages.item_id = Items.id where (Items.gender =0 || Items.gender = 0);
+  // select Items.id,Items.name,ItemImages.name as image from Items join ItemImages on ItemImages.item_id = Items.id where (Items.gender =0 || Items.gender = 0) group by id;
   // console.log("api")
   con.query(result,(err,rows) => {
     res.send(rows);

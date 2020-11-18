@@ -8,8 +8,14 @@ var total = 0;
     super(props);
     this.state = {
       input: "",
+      apiResponse:""
     };
     this.handleResize = this.handleResize.bind(this);
+  }
+  ProductDetail() {
+    fetch("http://localhost:9000/testAPI/ViewWatch?gender=0,1")
+        .then(res => res.text())
+        .then(res => this.setState({ apiResponse: JSON.parse(res) }));
   }
   handleResize(){
     this.setState({
