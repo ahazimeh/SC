@@ -37,7 +37,7 @@ router.get("/ViewWatch",function(req,res){
     for(let i = 0;i < gender.length;i++){
       result = result + "Items.gender = "+gender[i];
       if(gender.length-1 == i){
-        result = result +")";
+        result = result +") group by id";
       }
       else{
         result = result + " || ";
@@ -45,7 +45,7 @@ router.get("/ViewWatch",function(req,res){
     }
   }
   else{
-    result = result + "Items.gender = "+req.query.gender+")";
+    result = result + "Items.gender = "+req.query.gender+") group by id";
   }
   console.log(result);
   // result = result+"Items.gender =0 || Items.gender = 0)";
