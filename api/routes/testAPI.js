@@ -56,11 +56,17 @@ router.get("/ViewWatch",function(req,res){
   });
   // res.send("Api is working");
 })
-router.get("listWatches",function(req,res,next){
-  con.query("select * from Items",(err,rows) => {
+// router.get("listWatches",function(req,res,next){
+//   con.query("select * from Items",(err,rows) => {
+//     res.send(rows);
+//   })
+// })
+router.get("/productDetails",function(req,res,next){
+  // select item_id,ItemImages.name as image,Items.name,Items.description from ItemImages join Items on Items.id = item_id where item_id =1;
+  let query = "select item_id,ItemImages.name as image,Items.name,Items.description from ItemImages join Items on Items.id = item_id where item_id ="+req.query.id;
+  con.query(query,(err,rows) => {
     res.send(rows);
   })
 })
-
 
 module.exports = router;

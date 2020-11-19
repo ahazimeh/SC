@@ -1,5 +1,6 @@
 import React from "react";
-import './MainImages.css'
+import './MainImages.css';
+import {Link} from 'react-router-dom';
 var slideIndex = 0;
   class MainImages extends React.Component {
   state = {
@@ -26,7 +27,15 @@ var slideIndex = 0;
   componentDidMount(){
     this.showSlides();
   }
+  static getDerivedStateFromProps(nextProps, prevState) {
+    console.log(prevState)
+    console.log(nextProps)
 
+    if (nextProps.total !== prevState.total) {
+      return true;
+    }
+    return null
+  }
   render() {
     let w = window.innerWidth;
     let h = window.innerHeight;

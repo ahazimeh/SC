@@ -1,11 +1,15 @@
 import React from "react";
 import $ from 'jquery';
 import './ListWatches.css';
+import ProductDetails from "./productDetails/ProductDetails";
 
+import { Router, Route, Link,NavLink,withRouter,Redirect } from 'react-router-dom';
+import { useHistory } from "react-router-dom";
+import { browserHistory, IndexRoute } from 'react-router';
 var h;var hi;
 class ListWatches extends React.Component {
-    constructor(props) {
-        super(props);
+    constructor(props,context) {
+        super(props,context);
         this.state = {
             input: "",
             apiResponse:""
@@ -28,6 +32,11 @@ class ListWatches extends React.Component {
             });
     
       }
+      ProductDetails(e){
+          console.log(e)
+        //   this.props.history.push("/")
+        return <Redirect to='/Home'  />
+      }
     componentWillMount() {
         window.addEventListener('resize',this.handleResize);
             h =window.innerWidth*0.65*0.45;
@@ -47,8 +56,9 @@ class ListWatches extends React.Component {
 
         for(let i = 0;i < this.state.apiResponse.length;i++){
             watches.push(
+                // <div onClick={event =>  window.location.href='/productDetails?id='+this.state.apiResponse[i].id} style={{ height:h}} className="singleWatch">
         
-                <div onClick={event =>  window.location.href='/productDetails?id='+this.state.apiResponse[i].id} style={{ height:h}} className="singleWatch">
+                <div onClick={this.ProductDetails.bind(this,this.state.apiResponse[i].id)} style={{ height:h}} className="singleWatch">
                 <img height={hi} width="50%" src={require('../img/listWatches/'+this.state.apiResponse[i].image)}/>
                 <br/><br/>
                 <div>{this.state.apiResponse[i].name}</div>
