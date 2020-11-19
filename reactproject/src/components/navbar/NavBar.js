@@ -1,5 +1,6 @@
 import React from "react";
 import './css/bootstrap.css';
+import {Link} from 'react-router-dom';
 // import './css/bootstrap.min.css';
 // import './css/font-awesome.min.css';
 // import './css/front-end.css';
@@ -22,11 +23,11 @@ import './css/bootstrap.css';
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="/">WebSiteName</a>
+      <Link class="navbar-brand" to="/">WebSiteName</Link>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="/home">Home</a></li>
+        <li class="active"><Link to="/home">Home</Link></li>
         {/* <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -35,12 +36,12 @@ import './css/bootstrap.css';
             <li><a href="#">Page 1-3</a></li>
           </ul>
         </li> */}
-        <li><a href="/watches">Watches</a></li>
+        <li><Link to="/watches">Watches</Link></li>
         {/* <li><a href="/productDetails">ProductDetails</a></li> */}
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><Link to="#"><span class="glyphicon glyphicon-user"></span> Sign Up</Link></li>
+        <li><Link to="#"><span class="glyphicon glyphicon-log-in"></span> Login</Link></li>
       </ul>
     </div>
   </div>
